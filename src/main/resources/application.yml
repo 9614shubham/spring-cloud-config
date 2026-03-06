@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: config
+  cloud:
+    config:
+      server:
+        git:
+          uri: git@github.com:9614shubham/microservices-config.git
+          default-label: ${CONFIG_BRANCH:main}
+          clone-on-start: true
+server:
+  port: 8888
+  
+logging:
+  level:
+    org.springframework.cloud.config: DEBUG
+    org.springframework.cloud.config.server: DEBUG
+    org.eclipse.jgit: DEBUG
+
+
